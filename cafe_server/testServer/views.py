@@ -2,5 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def hello_user(request):
-    return HttpResponse("Hello!")
+def hello(request):
+    return HttpResponse(f"Hello!")
+
+def hello_user(request, name):
+    return HttpResponse(f"Hello, {name.capitalize()}")
