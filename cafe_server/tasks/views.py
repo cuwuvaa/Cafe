@@ -7,6 +7,7 @@ from django.urls import reverse
 class NewTaskForm(forms.Form): 
     task = forms.CharField(label="Имя задачи")
 
+
 def list_tasks(request):
     if "list" not in request.session:
         request.session["list"] = []
@@ -17,6 +18,6 @@ def add_task(request):
         form = NewTaskForm(request.POST)
         if form.is_valid(): 
             task = form.cleaned_data["task"]
-            request.session["list"].append(task)
+            request.session["list"] += [task]
             return HttpResponseRedirect(reverse("tasks:list"))
     return render(request, "new_task.html", {"form":NewTaskForm()})
