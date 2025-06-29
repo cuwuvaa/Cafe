@@ -6,4 +6,4 @@ def hello(request):
     return HttpResponse(f"Hello!")
 
 def hello_user(request, name):
-    return HttpResponse(f"Hello, {name.capitalize()}")
+    return render(request, "index.html", {"msg":name.capitalize()})
