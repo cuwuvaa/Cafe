@@ -4,7 +4,7 @@
 <h1>Today's dishes:</h1>
 <ul>
     {% for dish in dishes %}
-        <li>ID блюда: {{ dish.id }} - {{ dish.name }}</li>
+        <li>ID блюда: {{ dish.id }} - {{ dish.name }} | Рейтинг: {{ dish.rating }}</li>
     {% endfor %}
 </ul>
 
