@@ -1,5 +1,11 @@
-{% extends "layout.html" %}
+{% extends "./layout.html" %}
 
 {% block body %}
-<h1>Today's news:</h1>
+<h1>Today's dishes:</h1>
+<ul>
+    {% for dish in dishes %}
+        <li>ID блюда: {{ dish.id }} - {{ dish.name }}</li>
+    {% endfor %}
+</ul>
+
 {% endblock %}
