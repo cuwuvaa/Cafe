@@ -1,4 +1,12 @@
 {% extends "./template_mainpage.html" %}
 {% block blog %}
-<h1>Hello</h1>
+<h1>Посты</h1>
+{% for post in posts %}
+    <div>
+        <h2>{{ post.title }}</h2>
+        <h3>{{ post.text }}</h3>
+    </div>
+{% endfor %}
+
+<a href="{% url 'blog:new_post' %}">Создать пост</a>
 {% endblock %}
