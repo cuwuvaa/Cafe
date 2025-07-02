@@ -1,0 +1,84 @@
+$body_color: rgb(255, 255, 255);
+$header_color: black;
+$post_color: rgb(153, 166, 174);
+$border_color: rgb(216, 216, 216);
+$text_color: rgb(37, 35, 38);
+$btn_hover: rgba(219, 218, 218, 0.554);
+
+h1,h2,h3,h6,body
+{
+    margin: 0;
+}
+
+body
+{
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style:normal;
+    background-color: $body_color;
+}
+
+header{
+    top:0;
+    color: white;
+    background-color: $header_color;
+    border-bottom: 5px solid $border_color;
+    width: 100%;
+    padding-block: 1rem;
+}
+
+#header_name
+{
+    margin-left: 1rem;
+}
+
+#createpost_btn
+{
+    position: absolute;
+    top: 2%;
+    right: 1%;
+    text-decoration: none;
+    color: $text_color;
+    background-color: $body_color;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: padding 1s ease, color 1.5s, font-weigth 1.5s, background-color 1s;
+    &:hover
+    {
+        background-color: transparentize($color: $body_color, $amount: 0.8);
+        color: white;
+        padding-inline-end: 40px;
+    }
+}
+
+.posts_container
+{
+    height: max-content;
+    width: 70%;
+    position: relative;
+    left: 15%;
+    margin-top: 1%;
+}
+
+.users_post
+{
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
+    background-color: $post_color;
+    border-radius: 10px;
+}
+
+.post_title, .post_text, #post_date
+{
+    margin: 20px;
+}
+
+#post_date
+{
+    position: inherit;
+    float: right;
+    margin: 0px 20px 20px 20px;
+}

@@ -23,7 +23,7 @@ def add_post(request):
         if form.is_valid():
             formated_title = form.cleaned_data["title"]
             formated_text = form.cleaned_data["text"]
-            NewPost = Post(title=formated_title, text=formated_text).save()
+            NewPost = Post(title=formated_title, text=formated_text, date=datetime.now()).save()
             return HttpResponseRedirect(reverse('blog:main'))
     else:
         form = CreatePostForm()

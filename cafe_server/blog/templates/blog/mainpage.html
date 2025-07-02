@@ -1,12 +1,20 @@
 {% extends "./template_mainpage.html" %}
 {% block blog %}
-<h1>Посты</h1>
-{% for post in posts %}
-    <div>
-        <h2>{{ post.title }}</h2>
-        <h3>{{ post.text }}</h3>
-    </div>
-{% endfor %}
+<header>
+    <h1 id="header_name">CuwuvaaBlog</h1>
+    <a id="createpost_btn" href="{% url 'blog:new_post' %}">Создать пост</a>
+</header>
 
-<a href="{% url 'blog:new_post' %}">Создать пост</a>
+    <div class="posts_container">
+    {% for post in posts reversed%}
+        <div class="users_post">
+            <h2 class="post_title">{{ post.title }}</h2>
+            <h3 class="post_text">{{ post.text }}</h3>
+            <h5 id="post_date">{{ post.date|date:"F j, Y в H:i"}}</h5>
+        </div>
+    {% empty %}
+    <h2>Пусто</h2>
+    {% endfor %}
+    </div>
+
 {% endblock %}
