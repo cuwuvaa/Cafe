@@ -2,7 +2,9 @@
 
 {% block body %}
 <h1>Add dish</h1>
-<form action="{% url 'add' %}" method="post">
+<form action="{% url 'cafe:add_dish' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
     <input type="submit">
 </form>
 

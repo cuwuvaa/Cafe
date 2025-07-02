@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from django import forms
 from django.urls import reverse
 from cafe.models import Dish
@@ -18,4 +20,8 @@ def add_dish(request):
             fname = form.cleaned_data["name"]
             frating = form.cleaned_data["rating"]
             s = Dish(name=fname, rating = frating).save()
-            return redirect(reverse('main'))
+            return HttpResponseRedirect(reverse('cafe:main'))
+    else:
+        form = SendDishForm()
+        
+    return render(request, "main/add.html", {"form":form})
