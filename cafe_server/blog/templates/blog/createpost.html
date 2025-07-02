@@ -1,0 +1,9 @@
+{% extends "./template_createpost.html" %}
+{% block blog %}
+    <h1>Creating post</h1>
+    <form action="{% url 'blog:new_post'%}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit">
+    </form>
+{% endblock %}
